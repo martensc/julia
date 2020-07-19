@@ -1,1 +1,0 @@
-{"version":3,"sources":["test.scss"],"names":[],"mappings":"AAAA,KACE,gCACA,eACA,UAAW,CACZ","file":"../test.css","sourcesContent":["body {\n  font-family: verdana, sans-serif;\n  font-size: 16px;\n  color: blue;\n}\n"]}
