@@ -39,11 +39,18 @@ gulp.task('sass', () => (
     }))
 ));
 
+// Move Misc Files
+gulp.task('misc', function() {
+  gulp.src(['src/CNAME'])
+    .pipe(gulp.dest('./build'));
+});
+
 // Deploy to GH Pages
 gulp.task('deploy', function () {
   return gulp.src("./build/**/*")
     .pipe(deploy())
 });
+
 
 // Watch
 gulp.task('watch', () => {
@@ -68,6 +75,6 @@ gulp.task('html:watch', ['browserSync', 'html'], () => (
     .watch('src/**/*.html', ['html'])
 ));
 
-gulp.task('default', ['html', 'html:watch', 'sass', 'sass:watch', 'watch']);
+gulp.task('default', ['misc', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
 
-gulp.task('build', ['html', 'sass']);
+gulp.task('build', ['html', 'sass', 'misc']);
