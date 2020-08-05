@@ -1,0 +1,30 @@
+// @file
+// Define your grid base here.
+// @copyright Copyright (c) 2018 Palantir.net
+
+$gap: rhythm(1);
+
+%container,
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 rhythm(1);
+}
+
+.grid--2col {
+  display: grid;
+  // Setup a basic layout
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  // gap
+  grid-gap: $gap;
+  
+  .no-cssgrid & {
+    @extend %clearfix;
+    display: block;
+  }
+
+  @include breakpoint($bp1) {
+    grid-template-columns: 1fr 1fr;
+  } 
+}

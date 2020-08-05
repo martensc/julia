@@ -1,0 +1,34 @@
+// @file
+// Centralize your imports here.
+// Styles are organized using the SMACSS technique.
+// @see http://smacss.com/book/
+
+// Add Vertical Rhythm Helpers
+@import "00-helpers/vertical-rhythm/vertical_rhythm";
+
+// Start with your Init file.
+@import "00-helpers/init";
+
+// Add custom mixins, functions, and helpers
+@import "00-helpers/helpers";
+
+// Base files
+@import "00-helpers/base";
+
+// Animations
+@import "00-helpers/animations";
+
+// Layout rules
+@import "01-grid/base";
+
+// Component (SMACSS module) rules
+
+
+// WYSIWYG Components
+// These fall last in the cascade so they are not overwritten by other styles.
+
+
+// Print Styles
+@import "00-helpers/print";
+
+// @copyright Copyright (c) 2018 Palantir.net
