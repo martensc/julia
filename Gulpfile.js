@@ -3,7 +3,9 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
+const deploy = require('gulp-gh-pages');
 
+// browserSync
 gulp.task('browserSync', () => {
   browserSync.init({
     server: {
@@ -12,6 +14,7 @@ gulp.task('browserSync', () => {
   })
 });
 
+// Sass
 gulp.task('sass', () => (
   gulp.src('src/scss/**/*.scss')
     .pipe(sourcemaps.init())
@@ -27,6 +30,16 @@ gulp.task('sass', () => (
     }))
 ));
 
+// Deploy to GH Pages
+gulp.task('deploy', function () {
+  return gulp.src([
+      "./src/**/*",
+      "!./src/scss/"
+    ])
+    .pipe(deploy())
+});
+
+// Watch
 gulp.task('watch', () => {
   gulp.watch('src/scss/**/*.scss', ['sass'])
   .on('change', (event) => {
@@ -38,6 +51,7 @@ gulp.task('watch', () => {
   });
 });
 
+// Watch
 gulp.task('sass:watch', ['browserSync', 'sass'], () => (
   gulp
     .watch('src/scss/**/*.scss', ['sass'])
