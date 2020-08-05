@@ -70,4 +70,4 @@ gulp.task('html:watch', ['browserSync', 'html'], () => (
 
 gulp.task('default', ['html', 'html:watch', 'sass', 'sass:watch', 'watch']);
 
-gulp.task('build', ['sass']);
+gulp.task('build', ['html', 'sass']);
