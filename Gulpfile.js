@@ -27,27 +27,18 @@ gulp.task('html', () => (
 gulp.task('imgs', () => (
   gulp.src('src/imgs/**/*')
     .pipe(gulp.dest('./build/imgs'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
 ));
 
 // SVGs
 gulp.task('svgs', () => (
   gulp.src('src/svgs/**/*')
     .pipe(gulp.dest('./build/svgs'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
 ));
 
 // Fonts
 gulp.task('fonts', () => (
   gulp.src('src/fonts/**/*')
     .pipe(gulp.dest('./build/fonts'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
 ));
 
 // Sass
@@ -68,7 +59,7 @@ gulp.task('sass', () => (
 
 // Move Misc Files
 gulp.task('misc', function() {
-  gulp.src(['src/CNAME', 'src/imgs/**/*', 'src/svgs/**/*'])
+  gulp.src(['src/CNAME'])
     .pipe(gulp.dest('./build'));
 });
 
@@ -104,4 +95,4 @@ gulp.task('html:watch', ['browserSync', 'html'], () => (
 
 gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
 
-gulp.task('build', ['html', 'sass', 'imgs', 'svgs', 'fonts', 'misc']);
+gulp.task('build', ['imgs', 'svgs', 'fonts', 'misc', 'html', 'sass']);
