@@ -1,8 +1,9 @@
 // Copyright (c) 2020 carl-martens.com
 
 .site-header {
+  position: relative;
   background-color: $white;
-  padding: 0.5em 0 0.3em;
+  padding: 0.3em 0;
 
   @include breakpoint($bp3) {
     position: absolute;
@@ -23,7 +24,9 @@
 }
 
 .site-header__logo {
+  position: relative;
   display: inline-block;
+  top: 2px;
 
   svg {
     @include breakpoint(0 1050px) {
@@ -91,6 +94,29 @@
     }
   }
 
+  &.js-open {
+    .site-header__menu-2 {
+      opacity: 0;
+    }
+
+    .site-header__menu-1 {
+      transform: rotate(45deg) translate(5px, 9px);
+
+      @include breakpoint($bp2) {
+        transform: rotate(45deg) translate(7px, 10px);
+      }
+    }
+
+    .site-header__menu-3 {
+      transform: rotate(-45deg) translate(3px, -6px);
+      width: 100%;
+
+      @include breakpoint($bp2) {
+        transform: rotate(-45deg) translate(3px, -6px);
+      }
+    }
+  }
+
   @include breakpoint($bp3) {
     display: none;
   }
@@ -116,17 +142,80 @@
 
 .site-header__nav {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  text-align: center;
+  padding: $gap;
+  z-index: 2;
+
+  &.js-open {
+    display: block;
+  }
 
   @include breakpoint($bp3) {
     display: block;
+    position: static;
+    background-color: transparent;
+    padding: 0;
   }
 }
 
 .site-header__link {
-  @include adjust-font-size-to($sm-text, 1);
+  @include adjust-font-size-to($text, 1);
+  position: relative;
+  display: block;
   font-weight: 500;
-  color: $white;
-  margin-right: 1.25em;
+  color: $text-color;
+  margin: 1em 0;
+
+  &.active,
+  &:hover,
+  &:focus {
+    color: $teal;
+  }
+
+  @include breakpoint($bp3) {
+    @include adjust-font-size-to($sm-text, 1);
+    display: inline-block;
+    color: $white;
+    margin: 0 1.25em 0 0;
+
+    &::before {
+      @include trans;
+      transform: translateX(-50%);
+      content: '';
+      position: absolute;
+      bottom: -0.5em;
+      left: 50%;
+      background-color: transparent;
+      width: 25px;
+      height: 2px;
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+      transform: translateY(-0.25em);
+      color: $white;
+
+      &::before {
+        background-color: $purple-light;
+        opacity: 0.5;
+      }
+    }
+
+    &.active {
+      color: $white;
+
+      &::before {
+        background-color: $purple-light;
+        opacity: 1;
+      }
+    }
+  }
 
   @include breakpoint(1050px) {
     margin-right: 2em;
@@ -135,13 +224,12 @@
   @include breakpoint(1200px) {
     margin-right: 3.5em;
   }
-
-  &:hover,
-  &:focus {
-    color: $white;
-  }
 }
 
 .site-header__button {
-  margin-left: 1.75em;
+  margin-top: 1em;
+
+  @include breakpoint($bp3) {
+    margin: 0 0 0 1.75em;
+  }
 }

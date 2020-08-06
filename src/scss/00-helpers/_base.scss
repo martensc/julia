@@ -30,17 +30,17 @@ body {
 // Base Link styles
 a {
   @include trans();
-  color: $gray-dark;
+  color: $teal;
   text-decoration: none;
 }
 
 a:active,
 a:hover {
-  color: $gray-medium;
+  color: $black;
 }
 
 a:focus {
-  color: $gray-medium;
+  color: $black;
 }
 
 // Base heading styles

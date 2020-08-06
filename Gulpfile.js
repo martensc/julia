@@ -41,6 +41,15 @@ gulp.task('fonts', () => (
     .pipe(gulp.dest('./build/fonts'))
 ));
 
+// JS
+gulp.task('js', () => (
+  gulp.src('src/js/**/*')
+    .pipe(gulp.dest('./build/js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+));
+
 // Sass
 gulp.task('sass', () => (
   gulp.src('src/scss/**/*.scss')
@@ -76,6 +85,10 @@ gulp.task('watch', () => {
   .on('change', (event) => {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
+  gulp.watch('src/*.js', browserSync.reload)
+  .on('change', (event) => {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  });
   gulp.watch('src/*.html', browserSync.reload)
   .on('change', (event) => {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
@@ -88,11 +101,16 @@ gulp.task('sass:watch', ['browserSync', 'sass'], () => (
     .watch('src/scss/**/*.scss', ['sass'])
 ));
 
+gulp.task('js:watch', ['browserSync', 'js'], () => (
+  gulp
+    .watch('src/**/*.js', ['js'])
+));
+
 gulp.task('html:watch', ['browserSync', 'html'], () => (
   gulp
     .watch('src/**/*.html', ['html'])
 ));
 
-gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
+gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'js', 'js:watch', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
 
-gulp.task('build', ['imgs', 'svgs', 'fonts', 'misc', 'html', 'sass']);
+gulp.task('build', ['imgs', 'svgs', 'fonts', 'js', 'misc', 'html', 'sass']);
