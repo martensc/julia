@@ -1,0 +1,190 @@
+// Copyright (c) 2020 carl-martens.com
+
+.site-header {
+  position: relative;
+  background-color: $white;
+  padding: 0.3em 0;
+
+  @include breakpoint($bp3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: transparent;
+    padding: 1.5em 0;
+  }
+}
+
+.site-header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header__logo {
+  position: relative;
+  display: inline-block;
+  top: 2px;
+
+  svg {
+    @include breakpoint(0 1050px) {
+      width: 230px;
+      height: 100%;
+    }
+  }
+
+  path {
+    @include trans;
+  }
+
+  &:hover,
+  &:focus {
+    path.logo-vote {
+      fill: $white;
+    }
+
+    path.logo-name {
+      fill: $purple-light;
+    }
+  }
+
+  @include breakpoint(0 $bp3) {
+    path.logo-vote {
+      fill: $purple-medium;
+    }
+
+    path.logo-name {
+      fill: $purple-dark;
+    }
+
+    &:hover,
+    &:focus {
+      path.logo-vote {
+        fill: $purple-dark;
+      }
+
+      path.logo-name {
+        fill: $purple-medium;
+      }
+    }
+  }
+}
+
+.site-header__menu {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url('../svgs/hamburger.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  &.js-open {
+    background-image: url('../svgs/close.svg');
+  }
+
+  @include breakpoint($bp3) {
+    display: none;
+  }
+}
+
+.site-header__nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  text-align: center;
+  padding: $gap;
+  z-index: 2;
+
+  &.js-open {
+    display: block;
+  }
+
+  @include breakpoint($bp3) {
+    display: block;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.site-header__link {
+  @include adjust-font-size-to($text, 1);
+  position: relative;
+  display: block;
+  font-weight: 500;
+  color: $text-color;
+  margin: 1em 0;
+
+  &.active,
+  &:hover,
+  &:focus {
+    color: $teal;
+  }
+
+  @include breakpoint($bp3) {
+    @include adjust-font-size-to($sm-text, 1);
+    display: inline-block;
+    color: $white;
+    margin: 0 1.25em 0 0;
+
+    &::before {
+      @include trans;
+      transform: translateX(-50%);
+      content: '';
+      position: absolute;
+      bottom: -0.5em;
+      left: 50%;
+      background-color: transparent;
+      width: 25px;
+      height: 2px;
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+      transform: translateY(-0.25em);
+      color: $white;
+
+      &::before {
+        background-color: $purple-light;
+        opacity: 0.5;
+      }
+    }
+
+    &.active {
+      color: $white;
+
+      &::before {
+        background-color: $purple-light;
+        opacity: 1;
+      }
+    }
+  }
+
+  @include breakpoint(1050px) {
+    margin-right: 2em;
+  }
+
+  @include breakpoint(1200px) {
+    margin-right: 3.5em;
+  }
+}
+
+.site-header__button {
+  margin-top: 1em;
+
+  @include breakpoint($bp3) {
+    margin: 0 0 0 1.75em;
+  }
+}
