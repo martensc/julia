@@ -43,15 +43,6 @@ gulp.task('fonts', () => (
     .pipe(gulp.dest('./build/fonts'))
 ));
 
-// JS
-// gulp.task('js', () => (
-//   gulp.src('src/js/**/*')
-//     .pipe(gulp.dest('./build/js'))
-//     .pipe(browserSync.reload({
-//       stream: true
-//     }))
-// ));
-
 // Concat and Compress JS Files
 gulp.task('js', () => (
   gulp.src('src/js/**/*')
@@ -64,7 +55,6 @@ gulp.task('js', () => (
       stream: true
     }))
 ));
-
 
 // Sass
 gulp.task('sass', () => (
