@@ -1,0 +1,120 @@
+// Copyright (c) 2020 carl-martens.com
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  max-height: 1100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    content: '';
+    background: $purple;
+    background: linear-gradient(294deg, $purple-dark 40%, $purple 100%);
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: 10%;
+    transform: rotate(4deg);
+  }
+
+  &::after {
+    @include breakpoint($bp3) {
+      content: '';
+      background-color: $white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 200px;
+    }
+
+    @include breakpoint($bp5) {
+      width: 15%;
+    }
+
+    @include breakpoint($bp6) {
+      width: 25%;
+    }
+  }
+}
+
+.hero__container {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+
+  @include breakpoint($bp3) {
+    &::before {
+      content: '';
+      background-color: $white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 200px;
+    }
+  }
+}
+
+.hero__content {
+  flex: 0 0 100%;
+
+  @include breakpoint($bp3) {
+    flex: 0 0 50%;
+  }
+
+  .display {
+    color: $white;
+
+    @include breakpoint($bp3 $bp5) {
+      font-size: 6vw;
+    }
+  }
+}
+
+.hero__text {
+  @include adjust-font-size-to($xs-heading, 1.2);
+
+  @include breakpoint($bp3) {
+    width: 90%;
+  }
+}
+
+.hero__image {
+  display: none;
+
+  @include breakpoint($bp3) {
+    display: block;
+    position: relative;
+    top: 9em;
+    align-self: flex-start;
+    flex: 0 0 45%;
+    height: 70vh;
+    max-height: 800px;
+    background-image: url('../imgs/jm-overlook.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    mask-image: url('../svgs/hero-mask.svg');
+    mask-size: 100%, auto, cover;
+    mask-repeat: no-repeat;
+    mask-position: center bottom;
+  }
+}

@@ -1,12 +1,12 @@
 // @file
 // Define your grid base here.
-// @copyright Copyright (c) 2018 Palantir.net
+// Copyright (c) 2020 carl-martens.com
 
 $gap: rhythm(1);
 
 %container,
 .container {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 rhythm(1);
 }
@@ -18,7 +18,7 @@ $gap: rhythm(1);
   grid-template-rows: auto;
   // gap
   grid-gap: $gap;
-  
+
   .no-cssgrid & {
     @extend %clearfix;
     display: block;
@@ -26,5 +26,5 @@ $gap: rhythm(1);
 
   @include breakpoint($bp1) {
     grid-template-columns: 1fr 1fr;
-  } 
+  }
 }
