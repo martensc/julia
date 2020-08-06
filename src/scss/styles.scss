@@ -6,6 +6,9 @@
 // Add Vertical Rhythm Helpers
 @import "00-helpers/vertical-rhythm/vertical_rhythm";
 
+// Fonts
+@import "00-helpers/fonts";
+
 // Start with your Init file.
 @import "00-helpers/init";
 
@@ -22,7 +25,7 @@
 @import "01-grid/base";
 
 // Component (SMACSS module) rules
-
+@import "03-components/hero";
 
 // WYSIWYG Components
 // These fall last in the cascade so they are not overwritten by other styles.
@@ -31,4 +34,4 @@
 // Print Styles
 @import "00-helpers/print";
 
-// @copyright Copyright (c) 2018 Palantir.net
+// Copyright (c) 2020 carl-martens.com

@@ -10,7 +10,7 @@
 // - Next we import NPM packages (Sass mixin libraries).
 // - Last we define our custom mixins for this theme.
 //
-// @copyright Copyright (c) 2018 Palantir.net
+// Copyright (c) 2020 carl-martens.com
 
 // =============================================================================
 // Browser Support Declarations, Support same browsers as normalize.css v8
@@ -36,8 +36,8 @@ $base-line-height: 24px; // This line-height determines the basic unit of vertic
 
 // TYPE SCALE
 
-$xxxl-heading: 3.25 * $base-font-size;
-$xxl-heading: 2.35 * $base-font-size;
+$xxxl-heading: 5 * $base-font-size;
+$xxl-heading: 3 * $base-font-size;
 $xl-heading: 2 * $base-font-size;
 $lg-heading: 1.85 * $base-font-size;
 $md-heading: 1.5 * $base-font-size;
@@ -49,6 +49,7 @@ $crumb: .6 * $base-font-size;
 
 // BASE HEADING SIZES
 // Used in Normalize
+$display: $xxxl-heading;
 $h1-font-size: $xxl-heading;
 $h2-font-size: $xl-heading;
 $h3-font-size: $lg-heading;
@@ -72,12 +73,15 @@ $verdana: Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $tahoma: Tahoma, Verdana, "DejaVu Sans", sans-serif;
 $helvetica: Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $arial: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$gilroy: 'Gilroy', Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$poppins: 'Poppins', Helvetica, Arial, "Nimbus Sans L", sans-serif;
+
 
 // If using server side fonts, place your @font-face declarations here:
 
 
 // Now, Create your custom font stacks
-$sans: $helvetica;
+$sans: $poppins;
 $serif: $georgia;
 $mono: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
@@ -105,6 +109,10 @@ $white: #ffffff;
 // Helper colors
 $yellow: #ff0; // Mark
 
+// Custom Colors
+$purple-light: #E3ACFF;
+$purple: #6B53C3;
+$purple-dark: #774196;
 
 // =============================================================================
 // Breakpoint Variables
@@ -118,7 +126,8 @@ $bp1: 400px;
 $bp2: 600px;
 $bp3: 900px;
 $bp4: 1200px;
-$bp5: 1600px;
+$bp5: 1400px;
+$bp6: 1900px;
 
 // =============================================================================
 // Spacing Variables

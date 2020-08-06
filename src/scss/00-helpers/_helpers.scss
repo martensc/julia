@@ -1,6 +1,6 @@
 // @file
 // Define your custom Sass mixins and extends here.
-// @copyright Copyright (c) 2018 Palantir.net
+// Copyright (c) 2020 carl-martens.com
 
 // =============================================================================
 // Typography Helpers
@@ -8,7 +8,7 @@
 
 // Tight tracking
 %track-in {
-  letter-spacing: -.0125em;
+  letter-spacing: -.04em;
 }
 
 // Open tracking
@@ -20,6 +20,10 @@
 %allcaps {
   @extend %track-out;
   text-transform: uppercase;
+}
+
+.highlight {
+  color: $purple-light;
 }
 
 // =============================================================================

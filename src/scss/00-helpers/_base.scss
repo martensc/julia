@@ -1,6 +1,6 @@
 // @file
 // This document builds on normalize to setup standards for font sizes.
-// @copyright Copyright (c) 2018 Palantir.net
+// Copyright (c) 2020 carl-martens.com
 
 // 1. Set document-wide box-sizing
 
@@ -18,13 +18,12 @@ body {
   font-size: ($base-font-size / 16px) * 100%;
   line-height: ($base-line-height / $base-font-size) * 1em;
   font-family: $base-font-family;
+  text-rendering: optimizeLegibility;
+  font-smoothing: always;
+  -webkit-font-smoothing: antialiased;
 
   @include breakpoint($bp2) {
     font-size: ($base-font-size / 16px) * 110%;
-  }
-
-  @include breakpoint($bp3) {
-    font-size: ($base-font-size / 16px) * 120%;
   }
 }
 
@@ -46,21 +45,34 @@ a:focus {
 }
 
 // Base heading styles
+.display {
+  @include leader(0, $display);
+  @include trailer(1, $display);
+
+  @include breakpoint($bp3) {
+    @include adjust-font-size-to($display, 3.25);
+  }
+}
+
 h1 {
+  @extend %track-in;
   // Set the font-size and line-height while keeping a proper vertical rhythm.
-  @include adjust-font-size-to($h1-font-size, 1.75);
+  @include adjust-font-size-to($h1-font-size, 2);
   // Set 1 unit of vertical rhythm on the top and bottom margins.
   @include leader(1.25, $h1-font-size);
   @include trailer(.75, $h1-font-size);
+  font-family: $gilroy;
 }
 
 h2 {
+  @extend %track-in;
   @include adjust-font-size-to($h2-font-size, 1.5);
   @include leader(1.25, $h2-font-size);
   @include trailer(.75, $h2-font-size);
 }
 
 h3 {
+  @extend %track-in;
   @include adjust-font-size-to($h3-font-size, 1.35);
   @include leader(1, $h3-font-size);
   @include trailer(.75, $h3-font-size);
@@ -100,4 +112,8 @@ mark {
 img {
   max-width: 100%;
   height: auto;
+}
+
+strong {
+  font-weight: 700;
 }
