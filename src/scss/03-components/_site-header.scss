@@ -1,0 +1,147 @@
+// Copyright (c) 2020 carl-martens.com
+
+.site-header {
+  background-color: $white;
+  padding: 0.5em 0 0.3em;
+
+  @include breakpoint($bp3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: transparent;
+    padding: 1.5em 0;
+  }
+}
+
+.site-header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header__logo {
+  display: inline-block;
+
+  svg {
+    @include breakpoint(0 1050px) {
+      width: 230px;
+      height: 100%;
+    }
+  }
+
+  path {
+    @include trans;
+  }
+
+  &:hover,
+  &:focus {
+    path.logo-vote {
+      fill: $white;
+    }
+
+    path.logo-name {
+      fill: $purple-light;
+    }
+  }
+
+  @include breakpoint(0 $bp3) {
+    path.logo-vote {
+      fill: $purple-medium;
+    }
+
+    path.logo-name {
+      fill: $purple-dark;
+    }
+
+    &:hover,
+    &:focus {
+      path.logo-vote {
+        fill: $purple-dark;
+      }
+
+      path.logo-name {
+        fill: $purple-medium;
+      }
+    }
+  }
+}
+
+.site-header__menu {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 1.75em;
+  height: 1.2em;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+
+  &:hover,
+  &:focus {
+    .site-header__menu-1,
+    .site-header__menu-2,
+    .site-header__menu-3 {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint($bp3) {
+    display: none;
+  }
+}
+
+.site-header__menu-1,
+.site-header__menu-2,
+.site-header__menu-3 {
+  @include trans;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: $teal;
+}
+
+.site-header__menu-2 {
+  width: 75%;
+}
+
+.site-header__menu-3 {
+  width: 50%;
+}
+
+.site-header__nav {
+  display: none;
+
+  @include breakpoint($bp3) {
+    display: block;
+  }
+}
+
+.site-header__link {
+  @include adjust-font-size-to($sm-text, 1);
+  font-weight: 500;
+  color: $white;
+  margin-right: 1.25em;
+
+  @include breakpoint(1050px) {
+    margin-right: 2em;
+  }
+
+  @include breakpoint(1200px) {
+    margin-right: 3.5em;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+.site-header__button {
+  margin-left: 1.75em;
+}

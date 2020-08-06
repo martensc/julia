@@ -44,6 +44,7 @@ $md-heading: 1.5 * $base-font-size;
 $sm-heading: 1.25 * $base-font-size;
 $xs-heading: 1.15 * $base-font-size;
 $text: 1 * $base-font-size;
+$sm-text: .9 * $base-font-size;
 $label: .8 * $base-font-size;
 $crumb: .6 * $base-font-size;
 
@@ -110,9 +111,12 @@ $white: #ffffff;
 $yellow: #ff0; // Mark
 
 // Custom Colors
+$text-color: #332645;
 $purple-light: #E3ACFF;
+$purple-medium: #BD82DC;
 $purple: #6B53C3;
 $purple-dark: #774196;
+$teal: #39C1AB;
 
 // =============================================================================
 // Breakpoint Variables

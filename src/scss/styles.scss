@@ -24,7 +24,11 @@
 // Layout rules
 @import "01-grid/base";
 
+// Elements (SMACSS module) rules
+@import "02-elements/buttons";
+
 // Component (SMACSS module) rules
+@import "03-components/site-header";
 @import "03-components/hero";
 
 // WYSIWYG Components
