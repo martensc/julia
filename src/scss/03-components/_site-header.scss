@@ -26,7 +26,8 @@
 .site-header__logo {
   position: relative;
   display: inline-block;
-  top: 2px;
+  top: 4px;
+  left: -10px;
 
   svg {
     @include breakpoint(0 1050px) {
