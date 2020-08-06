@@ -4,6 +4,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const deploy = require('gulp-gh-pages');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
 // browserSync
 gulp.task('browserSync', () => {
@@ -42,13 +44,27 @@ gulp.task('fonts', () => (
 ));
 
 // JS
+// gulp.task('js', () => (
+//   gulp.src('src/js/**/*')
+//     .pipe(gulp.dest('./build/js'))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }))
+// ));
+
+// Concat and Compress JS Files
 gulp.task('js', () => (
   gulp.src('src/js/**/*')
+    .pipe(concat('site.min.js'))
+    .pipe(uglify({
+      mangle: false
+    }))
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.reload({
       stream: true
     }))
 ));
+
 
 // Sass
 gulp.task('sass', () => (
