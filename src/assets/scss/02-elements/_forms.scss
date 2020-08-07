@@ -102,8 +102,23 @@ textarea {
   }
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  + label {
+    @include adjust-font-size-to($sm-text, 1);
+    font-weight: 400;
+  }
+}
+
+legend,
 label {
   @include adjust-font-size-to($text, 1);
   color: $text-color;
   font-weight: 700;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
