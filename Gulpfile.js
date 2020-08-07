@@ -41,8 +41,8 @@ gulp.task('imgs', () => (
 
 // SVGs
 gulp.task('svgs', () => (
-  gulp.src('src/svgs/**/*')
-    .pipe(gulp.dest('./build/svgs'))
+  gulp.src('src/assets/svgs/**/*')
+    .pipe(gulp.dest('./build/assets/svgs'))
 ));
 
 // Fonts
