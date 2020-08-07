@@ -188,7 +188,6 @@
   margin-top: 1em;
 
   @include breakpoint($bp3) {
-    //margin: 0 0 0 1.75em;
     margin-top: 0;
 
     .front & {
