@@ -35,8 +35,8 @@ gulp.task('html', () => (
 
 // Images
 gulp.task('imgs', () => (
-  gulp.src('src/imgs/**/*')
-    .pipe(gulp.dest('./build/imgs'))
+  gulp.src('src/assets/imgs/**/*')
+    .pipe(gulp.dest('./build/assets/imgs'))
 ));
 
 // SVGs
