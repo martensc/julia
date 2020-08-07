@@ -26,6 +26,25 @@
   color: $purple-light;
 }
 
+.mark--left {
+  position: relative;
+
+  &::before {
+    content: '';
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: -35px;
+    width: 25px;
+    height: 2px;
+    background-color: $text-color;
+
+    @include breakpoint($bp3) {
+      left: -45px;
+    }
+  }
+}
+
 // =============================================================================
 // List Helpers
 // =============================================================================

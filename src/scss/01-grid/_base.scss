@@ -9,6 +9,27 @@ $gap: rhythm(1);
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 rhythm(1);
+
+  .container--tight {
+    padding: 0;
+  }
+}
+
+%container--wide,
+.container--wide {
+  @extend %container;
+  max-width: 2000px;
+
+  .container,
+  .container--tight {
+    padding: 0;
+  }
+}
+
+%container--tight,
+.container--tight {
+  @extend %container;
+  max-width: 890px;
 }
 
 .grid--2col {

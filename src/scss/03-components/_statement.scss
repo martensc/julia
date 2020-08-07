@@ -1,0 +1,60 @@
+// Copyright (c) 2020 carl-martens.com
+
+.statement {
+  position: relative;
+  top: -4em;
+
+  @include breakpoint($bp3) {
+    top: -11em;
+  }
+
+  .container--wide {
+    position: relative;
+  }
+}
+
+.statement__image {
+  display: none;
+
+  @include breakpoint($bp3) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 45%;
+    background-image: url('../imgs/jm-building.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include breakpoint($bp4) {
+    width: 37%;
+  }
+
+  @include breakpoint($bp6) {
+    width: 40%;
+  }
+}
+
+.statement__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.statement__text {
+  flex: 0 0 100%;
+  margin: 0 0 3em;
+
+  @include breakpoint($bp3) {
+    flex: 0 0 45%;
+    margin: 10em 0 5em;
+  }
+
+  @include breakpoint($bp4) {
+    flex: 0 0 60%;
+    margin: 15em 0 10em;
+  }
+}
