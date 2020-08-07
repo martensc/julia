@@ -112,7 +112,7 @@
 
 .hero__image {
   position: relative;
-  background-image: url('../assets/imgs/jm-overlook.jpg');
+  background-image: url('../imgs/jm-overlook.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -127,11 +127,7 @@
     flex: 0 0 45%;
     height: 83vh;
     max-height: 800px;
-    background-image: url('../assets/imgs/jm-overlook.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    mask-image: url('../assets/svgs/hero-mask.svg');
+    mask-image: url('../svgs/hero-mask.svg');
     mask-size: 100%, auto, cover;
     mask-repeat: no-repeat;
     mask-position: center bottom;

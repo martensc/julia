@@ -66,7 +66,7 @@ gulp.task('js', () => (
 
 // Sass
 gulp.task('sass', () => (
-  gulp.src('src/scss/**/*.scss')
+  gulp.src('src/assets/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(autoprefixer({
@@ -74,7 +74,7 @@ gulp.task('sass', () => (
       cascade: false
     }))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulp.dest('./build/assets/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -95,7 +95,7 @@ gulp.task('deploy', function () {
 
 // Watch
 gulp.task('watch', () => {
-  gulp.watch('src/scss/**/*.scss', ['sass'])
+  gulp.watch('src/assets/scss/**/*.scss', ['sass'])
   .on('change', (event) => {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
@@ -112,7 +112,7 @@ gulp.task('watch', () => {
 // Watch
 gulp.task('sass:watch', ['browserSync', 'sass'], () => (
   gulp
-    .watch('src/scss/**/*.scss', ['sass'])
+    .watch('src/assets/scss/**/*.scss', ['sass'])
 ));
 
 gulp.task('js:watch', ['browserSync', 'js'], () => (
