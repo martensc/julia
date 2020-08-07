@@ -104,6 +104,10 @@ textarea {
 
 input[type="checkbox"],
 input[type="radio"] {
+  position: relative;
+  top: 0.1em;
+  margin-right: 0.25em;
+
   + label {
     @include adjust-font-size-to($sm-text, 1);
     font-weight: 400;
