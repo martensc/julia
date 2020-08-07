@@ -1,11 +1,16 @@
 // Copyright (c) 2020 carl-martens.com
 
 .statement {
-  position: relative;
-  top: -4em;
+  margin-top: -4em;
+  margin-bottom: 1em;
+
+  @include breakpoint($bp2) {
+    margin-bottom: 3em;
+  }
 
   @include breakpoint($bp3) {
-    top: -11em;
+    margin-top: -11em;
+    margin-bottom: 6em;
   }
 
   .container--wide {
@@ -46,7 +51,7 @@
 
 .statement__text {
   flex: 0 0 100%;
-  margin: 0 0 3em;
+  margin: 0;
 
   @include breakpoint($bp3) {
     flex: 0 0 45%;

@@ -29,8 +29,11 @@
 
 // Component (SMACSS module) rules
 @import "03-components/site-header";
+@import "03-components/site-footer";
 @import "03-components/hero";
 @import "03-components/statement";
+@import "03-components/footer-ctas";
+@import "03-components/footer-credits";
 
 // WYSIWYG Components
 // These fall last in the cascade so they are not overwritten by other styles.
