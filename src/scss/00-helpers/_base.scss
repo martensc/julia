@@ -136,4 +136,9 @@ hr {
   height: 1px;
   background-color: $gray-light;
   border: 0;
+  margin: 1em 0;
+
+  @include breakpoint($bp3) {
+    margin: 2.5em 0;
+  }
 }

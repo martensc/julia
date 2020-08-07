@@ -53,12 +53,12 @@ gulp.task('fonts', () => (
 
 // Concat and Compress JS Files
 gulp.task('js', () => (
-  gulp.src('src/js/**/*')
+  gulp.src('src/assets/js/**/*')
     .pipe(concat('site.min.js'))
     .pipe(uglify({
       mangle: false
     }))
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('./build/assets/js'))
     .pipe(browserSync.reload({
       stream: true
     }))
