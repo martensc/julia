@@ -1,51 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="MobileOptimized" content="width">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="robots" content="noindex">
-    <meta name="googlebot" content="noindex">
-    <title>Vote for Julia Martens | ISD 622 School Board</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/site.min.js"></script>
-  </head>
+  @@include('./includes/head.html', {
+    "title": "Vote for Julia Martens"
+  })
   <body>
-    <header class="site-header">
-      <div class="site-header__container container">
-        <a class="site-header__logo" href="/" title="Home">
-          <svg width="304" height="45" viewBox="0 0 304 45" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero" fill="none"><path class="logo-vote" d="M17.864 44.832c1.176 0 1.848-1.456 1.848-1.456 4.2-7.952 24.136-30.856 24.136-38.864 0-1.848-3.36-5.768-5.432-3.696-1.232 1.232.952.112.952 1.232 0 7.336-13.608 24.864-20.552 34.328 2.744-11.872 11.76-28.784 11.76-29.96 0-1.064-3.528-2.8-4.312-2.8C12.6 3.616 0 12.912 0 20.36c0 4.032 3.528 4.872 3.528 4.872s-.392-1.12-.392-2.52c0-4.872 8.792-13.272 20.496-14.896C19.88 15.656 14 32.176 14 40.296c0 4.088 2.072 4.536 3.864 4.536zM39.144 38c2.8 0 5.768-2.184 7.952-5.32 1.232-.56 2.744-1.624 4.704-3.64 1.232-1.288 2.352-5.88.56-4.312a17.336 17.336 0 0 1-2.8 3.136c.448-1.456.728-2.912.728-4.368 0-2.52-1.736-4.984-4.48-4.984-4.144 0-7.504 2.968-8.344 7.112-.28-.056-.616-.056-1.008-.056-1.344 0-3.192 3.472-3.192 6.608 0 4.424 3.976 5.824 5.88 5.824zm4.2-7.952c-1.456-.28-2.744-1.064-2.744-3.024 0-3.304 2.464-6.048 4.536-6.048 1.456 0 .224 5.096-1.792 9.072zm-5.096 4.312c-.504-.504-.224-1.848.28-3.248.728.896 1.792 1.456 3.08 1.792-1.176 1.624-2.408 2.408-3.36 1.456zM51.912 38c.28 0 .616-.112.616-.112 1.68-.784 6.384-5.376 7.616-6.552 2.24-2.072 2.072-5.208.224-3.36-.448.392-3.584 2.856-6.048 4.704 3.92-9.408 7.224-15.456 10.248-19.656 3.92-.392 8.456-1.176 8.68-1.176 1.176 0-.224 2.016.168 2.408.392.392 1.848-1.064 1.848-2.576 0-1.456-2.576-4.032-7.392-3.192 1.12-1.4 1.008-1.344 1.008-1.736 0-1.12-3.024-2.52-3.808-2.52-.672 0-1.68.952-4.256 4.704-2.128.28-4.088.448-4.984.448-3.136 0-.56-2.072-1.176-2.744-.336-.28-2.24.728-2.24 2.968 0 2.8 2.576 3.696 5.544 3.696h.056C53.928 20.136 49.84 28.76 49.84 34.64c0 1.4.448 3.36 2.072 3.36zm12.152 0c5.376 0 11.032-5.544 13.048-8.568.504-.616 1.904-3.416-.56-1.4s-6.72 6.328-10.976 5.544c-2.408-.448-1.288-3.696-.56-4.872.392.728 1.232 1.512 2.52 1.512 4.144 0 7.616-5.376 7.616-7.56 0-2.856-1.848-4.032-4.032-4.032-3.976 0-12.152 6.608-12.152 13.384 0 3.416 2.016 5.992 5.096 5.992zM65.8 27.416c1.736-2.632 4.368-4.704 5.992-4.704 1.456 0-2.744 4.2-5.992 4.704z" fill="#E3ACFF"/><path class="logo-name" d="M88.68 38.56c5.76 0 10.08-3.4 10.08-9.56V10h-6.4v19c0 1.72-.84 3.32-3.64 3.32-2.16 0-3.08-.84-3.96-2.4l-5.56 3.2c1.84 3.56 5.04 5.44 9.48 5.44zm19.322 0c2.64 0 4.64-.96 5.72-2.44V38h6V18h-6v10.92c0 2.84-1.52 4.12-3.72 4.12-1.92 0-3.48-1.16-3.48-3.64V18h-6v12.28c0 5.4 3.44 8.28 7.48 8.28zm19.762-.56V8.8h-6V38h6zm5.042-21.76c1.96 0 3.6-1.64 3.6-3.6 0-1.96-1.64-3.6-3.6-3.6-1.96 0-3.6 1.64-3.6 3.6 0 1.96 1.64 3.6 3.6 3.6zm3 21.76V18h-6v20h6zm10.602.56c2.68 0 4.64-.92 5.96-2.44V38h6V18h-6v1.88c-1.32-1.52-3.28-2.44-5.96-2.44-5.24 0-9.56 4.6-9.56 10.56 0 5.96 4.32 10.56 9.56 10.56zm1.2-5.68c-2.76 0-4.76-1.88-4.76-4.88s2-4.88 4.76-4.88 4.76 1.88 4.76 4.88-2 4.88-4.76 4.88zM174.652 38V21.72l7.24 11.88h.72l7.24-11.88V38h6.4V10h-6.4l-7.6 12.44-7.6-12.44h-6.4v28h6.4zm32.403.56c2.68 0 4.64-.92 5.96-2.44V38h6V18h-6v1.88c-1.32-1.52-3.28-2.44-5.96-2.44-5.24 0-9.56 4.6-9.56 10.56 0 5.96 4.32 10.56 9.56 10.56zm1.2-5.68c-2.76 0-4.76-1.88-4.76-4.88s2-4.88 4.76-4.88 4.76 1.88 4.76 4.88-2 4.88-4.76 4.88zM227.057 38v-9.04c0-3.96 3.52-4.96 6-4.56v-6.8c-2.52 0-5.2 1.28-6 3.96V18h-6v20h6zm18.762 0v-5.44c-2.64.16-4.12 0-4.12-1.72v-7.08h4.12V18h-4.12v-5.6l-6 1.8V18h-3.2v5.76h3.2v7.08c0 5.6 2.28 7.96 10.12 7.16zm10.722.56c3.8 0 6.76-1.4 8.72-4.12l-4.8-2.76c-.8.88-2.2 1.52-3.84 1.52-2.2 0-4.04-.72-4.8-2.8h14.2c.16-.76.24-1.56.24-2.4 0-6.04-4.32-10.56-10.16-10.56-6.32 0-10.64 4.6-10.64 10.56 0 5.96 4.24 10.56 11.08 10.56zm3.76-12.64h-8.6c.56-2.04 2.08-3.16 4.36-3.16 1.8 0 3.6.84 4.24 3.16zM273.303 38V27.08c0-2.84 1.52-4.12 3.72-4.12 1.92 0 3.48 1.16 3.48 3.64V38h6V25.72c0-5.4-3.44-8.28-7.48-8.28-2.64 0-4.64.96-5.72 2.44V18h-6v20h6zm22.162.56c4.32 0 8.32-1.96 8.32-6.56 0-7.4-9.84-5.88-9.84-8.16 0-.72.64-1.12 1.68-1.12 1.32 0 2.12.72 2.68 1.76l5.12-2.76c-1.68-2.84-4.56-4.28-7.8-4.28-4.16 0-7.84 2.2-7.84 6.56 0 6.92 9.84 5.76 9.84 7.96 0 .8-.72 1.24-2.16 1.24-1.76 0-2.88-.84-3.4-2.36l-5.2 2.96c1.56 3.24 4.6 4.76 8.6 4.76z" fill="#FFF"/></g></svg>
-        </a>
-        <button class="site-header__menu">
-          <span class="visually-hidden">Toggle Menu</span>
-        </button>
-        <nav class="site-header__nav">
-          <a class="site-header__link" href="/about-me">About Me</a>
-          <a class="site-header__link" href="/platform">Platform</a>
-          <a class="site-header__link" href="/endorsements">Endorsements</a>
-          <a class="site-header__link" href="/contact">Contact</a>
-          <a class="site-header__button button" href="#">Donate</a>
-        </nav>
-      </div>
-    </header>
-    <div class="hero">
-      <div class="hero__container container">
-        <div class="hero__inner">
-          <div class="hero__content">
-            <h1 class="display"><span class="highlight">Now is the time,</span><br> vote Nov 3rd.</h1>
-            <div class="hero__text">
-              <p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. That is why I am running for <strong>District 622 School Board</strong>.</p>
-            </div>
-          </div>
-          <div class="hero__image" role="img" aria-label="Photo of Julia Martens in a park"></div>
-        </div>
-      </div>
-    </div>
-
+    @@include('./includes/site-header.html')
+    @@include('./includes/hero.html', {
+      'text': '<p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. That is why I am running for <strong>District 622 School Board</strong>.</p>'
+    })
+    <!-- Body START -->
     <div class="statement">
       <div class="container--wide">
         <div class="statement__image" role="img" aria-label="Photo of Julia Martens standing by building"></div>
@@ -58,54 +21,7 @@
         </div>
       </div>
     </div>
-
-    <footer class="site-footer">
-      <div class="footer-ctas">
-        <div class="footer-ctas__container container">
-          <div class="footer-ctas__item">
-            <h3 class="footer-ctas__title mark--bottom">About Julia</h3>
-            <div class="footer-ctas__text">
-              <p>Julia has resided in Oakdale for the last 4.5 years with her husband Carl, son Cameron (3.5), and dog Arie. They chose Oakdale for its excellent schools and strength in community.</p>
-            </div>
-            <a class="button--small" href="/about-me">More about Julia</a>
-          </div>
-          <div class="footer-ctas__item">
-            <h3 class="footer-ctas__title mark--bottom">Platform</h3>
-            <div class="footer-ctas__text">
-              <p>Julia has resided in Oakdale for the last 4.5 years with her husband Carl, son Cameron (3.5), and dog Arie.</p>
-            </div>
-            <a class="button--small" href="/platform">Reasons to Vote</a>
-          </div>
-          <div class="footer-ctas__item">
-            <h3 class="footer-ctas__title mark--bottom">Endorsements</h3>
-            <div class="footer-ctas__text">
-              <p>Julia has resided in Oakdale for the last 4.5 years with her husband Carl, son Cameron (3.5), and dog Arie. They chose Oakdale for its excellent schools and strength in community.</p>
-            </div>
-            <a class="button--small" href="/endorsements">Trust Statements</a>
-          </div>
-          <div class="footer-ctas__item">
-            <h3 class="footer-ctas__title mark--bottom">Media</h3>
-            <div class="footer-ctas__text">
-              <p>Julia has resided in Oakdale for the last 4.5 years with her husband Carl, son Cameron (3.5), and dog Arie. They chose Oakdale for its excellent schools and strength in community.</p>
-            </div>
-            <a class="button--small" href="/media">Watch Now</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-credits">
-        <div class="footer-credits__container container">
-          <a class="footer-credits__logo" href="/" title="Home">
-            <svg width="304" height="45" viewBox="0 0 304 45" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero" fill="none"><path class="logo-vote" d="M17.864 44.832c1.176 0 1.848-1.456 1.848-1.456 4.2-7.952 24.136-30.856 24.136-38.864 0-1.848-3.36-5.768-5.432-3.696-1.232 1.232.952.112.952 1.232 0 7.336-13.608 24.864-20.552 34.328 2.744-11.872 11.76-28.784 11.76-29.96 0-1.064-3.528-2.8-4.312-2.8C12.6 3.616 0 12.912 0 20.36c0 4.032 3.528 4.872 3.528 4.872s-.392-1.12-.392-2.52c0-4.872 8.792-13.272 20.496-14.896C19.88 15.656 14 32.176 14 40.296c0 4.088 2.072 4.536 3.864 4.536zM39.144 38c2.8 0 5.768-2.184 7.952-5.32 1.232-.56 2.744-1.624 4.704-3.64 1.232-1.288 2.352-5.88.56-4.312a17.336 17.336 0 0 1-2.8 3.136c.448-1.456.728-2.912.728-4.368 0-2.52-1.736-4.984-4.48-4.984-4.144 0-7.504 2.968-8.344 7.112-.28-.056-.616-.056-1.008-.056-1.344 0-3.192 3.472-3.192 6.608 0 4.424 3.976 5.824 5.88 5.824zm4.2-7.952c-1.456-.28-2.744-1.064-2.744-3.024 0-3.304 2.464-6.048 4.536-6.048 1.456 0 .224 5.096-1.792 9.072zm-5.096 4.312c-.504-.504-.224-1.848.28-3.248.728.896 1.792 1.456 3.08 1.792-1.176 1.624-2.408 2.408-3.36 1.456zM51.912 38c.28 0 .616-.112.616-.112 1.68-.784 6.384-5.376 7.616-6.552 2.24-2.072 2.072-5.208.224-3.36-.448.392-3.584 2.856-6.048 4.704 3.92-9.408 7.224-15.456 10.248-19.656 3.92-.392 8.456-1.176 8.68-1.176 1.176 0-.224 2.016.168 2.408.392.392 1.848-1.064 1.848-2.576 0-1.456-2.576-4.032-7.392-3.192 1.12-1.4 1.008-1.344 1.008-1.736 0-1.12-3.024-2.52-3.808-2.52-.672 0-1.68.952-4.256 4.704-2.128.28-4.088.448-4.984.448-3.136 0-.56-2.072-1.176-2.744-.336-.28-2.24.728-2.24 2.968 0 2.8 2.576 3.696 5.544 3.696h.056C53.928 20.136 49.84 28.76 49.84 34.64c0 1.4.448 3.36 2.072 3.36zm12.152 0c5.376 0 11.032-5.544 13.048-8.568.504-.616 1.904-3.416-.56-1.4s-6.72 6.328-10.976 5.544c-2.408-.448-1.288-3.696-.56-4.872.392.728 1.232 1.512 2.52 1.512 4.144 0 7.616-5.376 7.616-7.56 0-2.856-1.848-4.032-4.032-4.032-3.976 0-12.152 6.608-12.152 13.384 0 3.416 2.016 5.992 5.096 5.992zM65.8 27.416c1.736-2.632 4.368-4.704 5.992-4.704 1.456 0-2.744 4.2-5.992 4.704z" fill="#E3ACFF"/><path class="logo-name" d="M88.68 38.56c5.76 0 10.08-3.4 10.08-9.56V10h-6.4v19c0 1.72-.84 3.32-3.64 3.32-2.16 0-3.08-.84-3.96-2.4l-5.56 3.2c1.84 3.56 5.04 5.44 9.48 5.44zm19.322 0c2.64 0 4.64-.96 5.72-2.44V38h6V18h-6v10.92c0 2.84-1.52 4.12-3.72 4.12-1.92 0-3.48-1.16-3.48-3.64V18h-6v12.28c0 5.4 3.44 8.28 7.48 8.28zm19.762-.56V8.8h-6V38h6zm5.042-21.76c1.96 0 3.6-1.64 3.6-3.6 0-1.96-1.64-3.6-3.6-3.6-1.96 0-3.6 1.64-3.6 3.6 0 1.96 1.64 3.6 3.6 3.6zm3 21.76V18h-6v20h6zm10.602.56c2.68 0 4.64-.92 5.96-2.44V38h6V18h-6v1.88c-1.32-1.52-3.28-2.44-5.96-2.44-5.24 0-9.56 4.6-9.56 10.56 0 5.96 4.32 10.56 9.56 10.56zm1.2-5.68c-2.76 0-4.76-1.88-4.76-4.88s2-4.88 4.76-4.88 4.76 1.88 4.76 4.88-2 4.88-4.76 4.88zM174.652 38V21.72l7.24 11.88h.72l7.24-11.88V38h6.4V10h-6.4l-7.6 12.44-7.6-12.44h-6.4v28h6.4zm32.403.56c2.68 0 4.64-.92 5.96-2.44V38h6V18h-6v1.88c-1.32-1.52-3.28-2.44-5.96-2.44-5.24 0-9.56 4.6-9.56 10.56 0 5.96 4.32 10.56 9.56 10.56zm1.2-5.68c-2.76 0-4.76-1.88-4.76-4.88s2-4.88 4.76-4.88 4.76 1.88 4.76 4.88-2 4.88-4.76 4.88zM227.057 38v-9.04c0-3.96 3.52-4.96 6-4.56v-6.8c-2.52 0-5.2 1.28-6 3.96V18h-6v20h6zm18.762 0v-5.44c-2.64.16-4.12 0-4.12-1.72v-7.08h4.12V18h-4.12v-5.6l-6 1.8V18h-3.2v5.76h3.2v7.08c0 5.6 2.28 7.96 10.12 7.16zm10.722.56c3.8 0 6.76-1.4 8.72-4.12l-4.8-2.76c-.8.88-2.2 1.52-3.84 1.52-2.2 0-4.04-.72-4.8-2.8h14.2c.16-.76.24-1.56.24-2.4 0-6.04-4.32-10.56-10.16-10.56-6.32 0-10.64 4.6-10.64 10.56 0 5.96 4.24 10.56 11.08 10.56zm3.76-12.64h-8.6c.56-2.04 2.08-3.16 4.36-3.16 1.8 0 3.6.84 4.24 3.16zM273.303 38V27.08c0-2.84 1.52-4.12 3.72-4.12 1.92 0 3.48 1.16 3.48 3.64V38h6V25.72c0-5.4-3.44-8.28-7.48-8.28-2.64 0-4.64.96-5.72 2.44V18h-6v20h6zm22.162.56c4.32 0 8.32-1.96 8.32-6.56 0-7.4-9.84-5.88-9.84-8.16 0-.72.64-1.12 1.68-1.12 1.32 0 2.12.72 2.68 1.76l5.12-2.76c-1.68-2.84-4.56-4.28-7.8-4.28-4.16 0-7.84 2.2-7.84 6.56 0 6.92 9.84 5.76 9.84 7.96 0 .8-.72 1.24-2.16 1.24-1.76 0-2.88-.84-3.4-2.36l-5.2 2.96c1.56 3.24 4.6 4.76 8.6 4.76z" fill="#FFF"/></g></svg>
-          </a>
-          <span class="footer-credits__paid-for">Prepared and paid for by Friends of Julia Martens</span>
-          <div class="footer-credits__buttons">
-            <a class="button--invert" href="#">Donate</a>
-            <a class="button--invert" href="#">Yarn Sign</a>
-            <a class="button--invert" href="#">Literature</a>
-          </div>
-          <span class="footer-credits__copyright">Copyright 2020. All rights reserved.</span>
-        </div>
-      </div>
-    </footer>
+    <!-- Body END -->
+    @@include('./includes/site-footer.html')
   </body>
 </html>

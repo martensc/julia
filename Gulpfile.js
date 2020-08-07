@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create();
 const deploy = require('gulp-gh-pages');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const fileinclude = require('gulp-file-include');
 
 // browserSync
 gulp.task('browserSync', () => {
@@ -18,7 +19,14 @@ gulp.task('browserSync', () => {
 
 // HTML
 gulp.task('html', () => (
-  gulp.src('src/**/*.html')
+  gulp.src([
+    'src/**/*.html',
+    '!src/includes/**/*' // ignore
+  ])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(gulp.dest('./build'))
     .pipe(browserSync.reload({
       stream: true
