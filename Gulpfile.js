@@ -21,7 +21,7 @@ gulp.task('browserSync', () => {
 gulp.task('html', () => (
   gulp.src([
     'src/**/*.html',
-    '!src/includes/**/*' // ignore
+    '!src/_includes/**/*' // ignore
   ])
     .pipe(fileinclude({
       prefix: '@@',

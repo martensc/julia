@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  @@include('../includes/head.html', {
+  @@include('../_includes/head.html', {
     'title': 'About Me'
   })
   <body>
-    @@include('../includes/site-header.html', {
+    @@include('../_includes/site-header.html', {
       'context': {
         'page': 'about'
       }
     })
-    @@include('../includes/hero-simple.html', {
+    @@include('../_includes/hero-simple.html', {
       'context': {
         'image': true
       },
@@ -17,7 +17,7 @@
       'text': '<p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. I am running for District 622 School Board.</p>'
     })
 
-    @@include('../includes/featured-media.html', {
+    @@include('../_includes/featured-media.html', {
       'src': '<img src="../assets/imgs/jm-closeup.jpg" alt="Julia Martens next to building">',
     })
     <!-- Body START -->
@@ -29,6 +29,6 @@
       </div>
     </main>
     <!-- Body END -->
-    @@include('../includes/site-footer.html')
+    @@include('../_includes/site-footer.html')
   </body>
 </html>
