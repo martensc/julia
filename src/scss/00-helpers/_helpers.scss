@@ -45,6 +45,20 @@
   }
 }
 
+.mark--bottom {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -0.35em;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background-color: $text-color;
+  }
+}
+
 // =============================================================================
 // List Helpers
 // =============================================================================

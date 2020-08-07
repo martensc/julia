@@ -1,0 +1,76 @@
+// Copyright (c) 2020 carl-martens.com
+
+.footer-credits {
+  position: relative;
+  background: $purple;
+  background: linear-gradient(294deg, $purple-dark 50%, $purple 100%);
+  color: $white;
+  padding: 3em 0 0.5em;
+
+  @include breakpoint($bp2) {
+    background: none;
+    padding-top: 5em;
+  }
+}
+
+.footer-credits__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-credits__logo {
+  display: inline-block;
+
+  svg {
+    @include breakpoint(0 1050px) {
+      width: 230px;
+      height: 100%;
+    }
+  }
+
+  path {
+    @include trans;
+  }
+
+  &:hover,
+  &:focus {
+    path.logo-vote {
+      fill: $white;
+    }
+
+    path.logo-name {
+      fill: $purple-light;
+    }
+  }
+}
+
+.footer-credits__paid-for {
+  @include adjust-font-size-to($sm-text, 1);
+}
+
+.footer-credits__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em 0;
+
+  @include breakpoint($bp3) {
+    flex-direction: row;
+    margin: 3em 0 4em;
+  }
+
+  .button--invert {
+    margin: 0.5em 0;
+
+    @include breakpoint($bp3) {
+      flex: 1 0 200px;
+      margin: 0 1em;
+    }
+  }
+}
+
+.footer-credits__copyright {
+  @include adjust-font-size-to($crumb, 0.8);
+}

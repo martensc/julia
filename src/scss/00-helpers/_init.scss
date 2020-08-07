@@ -39,14 +39,15 @@ $base-line-height: 24px; // This line-height determines the basic unit of vertic
 $xxxl-heading: 5 * $base-font-size;
 $xxl-heading: 3 * $base-font-size;
 $xl-heading: 2 * $base-font-size;
-$lg-heading: 1.85 * $base-font-size;
-$md-heading: 1.5 * $base-font-size;
+$lg-heading: 1.5 * $base-font-size;
+$md-heading: 1.35 * $base-font-size;
 $sm-heading: 1.25 * $base-font-size;
 $xs-heading: 1.15 * $base-font-size;
 $text: 1 * $base-font-size;
 $sm-text: .9 * $base-font-size;
+$lg-label: .85 * $base-font-size;
 $label: .8 * $base-font-size;
-$crumb: .6 * $base-font-size;
+$crumb: .7 * $base-font-size;
 
 // BASE HEADING SIZES
 // Used in Normalize
@@ -116,7 +117,9 @@ $purple-light: #E3ACFF;
 $purple-medium: #BD82DC;
 $purple: #6B53C3;
 $purple-dark: #774196;
+$teal-light: #62EFD8;
 $teal: #39C1AB;
+$teal-dark: #278277;
 
 // =============================================================================
 // Breakpoint Variables

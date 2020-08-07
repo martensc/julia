@@ -1,0 +1,26 @@
+// Copyright (c) 2020 carl-martens.com
+
+.site-footer {
+  @include breakpoint($bp2) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      background: $purple;
+      background: linear-gradient(294deg, $purple-dark 50%, $purple 100%);
+      position: absolute;
+      top: 15%;
+      left: -10%;
+      right: -10%;
+      bottom: -30%;
+      transform: rotate(-2deg);
+    }
+  }
+
+  @include breakpoint($bp4) {
+    &::before {
+      top: 25%;
+    }
+  }
+}
