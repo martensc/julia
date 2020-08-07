@@ -1,0 +1,19 @@
+// Copyright (c) 2020 carl-martens.com
+
+.featured-media {
+  position: relative;
+  margin-top: -8em;
+  margin-bottom: 2em;
+  z-index: 3;
+
+  @include breakpoint($bp3) {
+    margin-top: -13em;
+    margin-bottom: 3em;
+  }
+}
+
+.featured-media__inner {
+  @include breakpoint($bp4) {
+    padding: 0 8em;
+  }
+}

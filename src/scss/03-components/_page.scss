@@ -1,0 +1,9 @@
+// Copyright (c) 2020 carl-martens.com
+
+.page-body {
+  margin: 2em 0 3em;
+
+  @include breakpoint($bp3) {
+    margin: 3em 0 5em;
+  }
+}
