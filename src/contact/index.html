@@ -16,14 +16,27 @@
       'title': 'Contact',
       'text': '<p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. I am running for District 622 School Board.</p>'
     })
-
     <!-- Body START -->
     <main class="page-body">
       <div class="container--tight">
-        FORM HERE
+        <form target="_blank" action="https://formsubmit.co/carlrmartens@gmail.com" method="POST">
+          <div class="form-row">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+          </div>
+          <input type="text" name="_honey" style="display: none">
+          <button type="submit" class="button">Submit</button>
+        </form>
       </div>
     </main>
-
     <!-- Body END -->
     @@include('../includes/site-footer.html')
   </body>

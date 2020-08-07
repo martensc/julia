@@ -27,6 +27,13 @@ body {
   }
 }
 
+::selection {
+  background: lighten($purple-light, 10%); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: lighten($purple-light, 10%); /* Gecko Browsers */
+}
+
 // Base Link styles
 a {
   @include trans();
