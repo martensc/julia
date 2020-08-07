@@ -4,6 +4,29 @@
   margin: 1.5em 0;
 }
 
+.form-row--2up {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp2) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.form-row__item {
+  margin-bottom: 1.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint($bp2) {
+    flex: 0 0 48%;
+    margin: 0;
+  }
+}
+
 // Input styles
 input[type="text"],
 input[type="email"],
@@ -30,6 +53,28 @@ input[type="datetime-local"] {
   padding: 0.75em;
   width: 100%;
   min-height: 2.8em; // Fix for date input height issue on iPhone Safari.
+
+  &:active,
+  &:hover,
+  &:focus {
+    border-color: $purple;
+  }
+}
+
+select {
+  @include adjust-font-size-to($sm-text, 1);
+  @include trans;
+  background-color: $white;
+  border: 1px solid lighten($gray-medium, 5%);;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: $text-color;
+  padding: 0.75em 1.85em 0.75em 0.75em;
+  appearance: none;
+  background-image: url('../svgs/select-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.75em) center;
+  width: 100%;
 
   &:active,
   &:hover,
