@@ -47,8 +47,8 @@ gulp.task('svgs', () => (
 
 // Fonts
 gulp.task('fonts', () => (
-  gulp.src('src/fonts/**/*')
-    .pipe(gulp.dest('./build/fonts'))
+  gulp.src('src/assets/fonts/**/*')
+    .pipe(gulp.dest('./build/assets/fonts'))
 ));
 
 // Concat and Compress JS Files
