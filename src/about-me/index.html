@@ -9,10 +9,26 @@
         'page': 'about'
       }
     })
-    @@include('../includes/hero.html', {
-      'text': '<p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. That is why I am running for <strong>District 622 School Board</strong>.</p>'
+    @@include('../includes/hero-simple.html', {
+      'context': {
+        'image': true
+      },
+      'title': 'About Me',
+      'text': '<p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. I am running for District 622 School Board.</p>'
     })
+
+    @@include('../includes/featured-media.html', {
+      'src': '<img src="../imgs/jm-closeup.jpg" alt="Julia Martens next to building">',
+    })
+
     <!-- Body START -->
+    <main class="page-body">
+      <div class="container--tight">
+        <p>Julia has resided in Oakdale for the last 4.5 years with her husband Carl, son Cameron (3.5), and dog Arie. They chose Oakdale for its excellent schools and strength in community. They have enjoyed exploring the outdoor recreational activities, community events, and supporting the small business owners in the area.</p>
+        <p>Julia holds a Bachelor of Science degree in Vocational Rehabilitation with a minor in Criminal Justice and Sociology from the University of Wisconsin-Stout and has continued a 12 year career in corrections. Early in her career, as a Juvenile Probation Officer in Ramsey County, working within the schools to ensure support for her clients and their families. She then accepted employment with the Minnesota Department of Corrections as an adult Probation/Parole Officer in the South Metro area, before transferring to a Workforce Development Specialist role as a Job Search Trainer. In this role, she provided employment training for incarcerated individuals transitioning back to the community. She assisted them in finding employment in the trades, manufacturing, customer service, and various other careers. As of recent, she is working with individuals on integrity, accountability, respect, restorative work, positive attitude, and work habits.</p>
+        <p>Throughout her career, she has personally experienced or witnessed what lack of education, money, housing, employment, and resources do to an individual, family, and community. She continues to use her voice to challenge practices in making them more equitable, attainable, and accessible. She has a passion for change, solution-based ideas, and encouraging and empowering youth, parents, educators, and our community to be better together.</p>
+      </div>
+    </main>
 
     <!-- Body END -->
     @@include('../includes/site-footer.html')

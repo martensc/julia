@@ -103,9 +103,10 @@
   left: 0;
   right: 0;
   background-color: $white;
+  box-shadow: 0 30px 35px rgba($black, 0.1);
   text-align: center;
   padding: $gap;
-  z-index: 2;
+  z-index: 10;
 
   &.js-open {
     display: block;
@@ -115,6 +116,7 @@
     display: block;
     position: static;
     background-color: transparent;
+    box-shadow: none;
     padding: 0;
   }
 }
@@ -186,6 +188,10 @@
   margin-top: 1em;
 
   @include breakpoint($bp3) {
-    margin: 0 0 0 1.75em;
+    margin-top: 0;
+
+    .front & {
+      margin: 0 0 0 1.75em;
+    }
   }
 }

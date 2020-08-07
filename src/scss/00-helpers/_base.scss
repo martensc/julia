@@ -98,6 +98,11 @@ h6 {
   @include trailer(.25, $h6-font-size);
 }
 
+// P
+p {
+  margin: 1em 0 2em;
+}
+
 // Pre tag
 
 pre {

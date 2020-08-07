@@ -1,0 +1,56 @@
+// Copyright (c) 2020 carl-martens.com
+
+.hero-simple {
+  position: relative;
+  overflow: hidden;
+  padding: 3em 0 4em;
+  z-index: 1;
+
+  &.hero-simple--image {
+    padding-bottom: 8em;
+  }
+
+  @include breakpoint($bp3) {
+    padding: 10em 0 6em;
+
+    &.hero-simple--image {
+      padding-bottom: 15em;
+    }
+  }
+
+  &::before {
+    content: '';
+    background: $purple;
+    background: linear-gradient(294deg, $purple-dark 30%, $purple 100%);
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: 10%;
+    transform: rotate(2deg);
+  }
+}
+
+.hero-simple__container {
+  position: relative;
+}
+
+.hero-simple__content {
+  color: $white;
+
+  @include breakpoint($bp3) {
+    text-align: center;
+  }
+
+  .display {
+    color: $white;
+
+    @include breakpoint($bp3 $bp5) {
+      font-size: 6vw;
+    }
+  }
+}
+
+.hero-simple__text {
+  @include adjust-font-size-to($xs-heading, 1.2);
+}
