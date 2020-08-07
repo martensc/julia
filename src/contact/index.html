@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  @@include('../includes/head.html', {
+    'title': 'Contact'
+  })
+  <body>
+    @@include('../includes/site-header.html', {
+      'context': {
+        'page': 'contact'
+      }
+    })
+    @@include('../includes/hero-simple.html', {
+      'context': {
+        'image': false
+      },
+      'title': 'Contact',
+      'text': '<p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. I am running for District 622 School Board.</p>'
+    })
+
+    <!-- Body START -->
+    <main class="page-body">
+      <div class="container--tight">
+        FORM HERE
+      </div>
+    </main>
+
+    <!-- Body END -->
+    @@include('../includes/site-footer.html')
+  </body>
+</html>
