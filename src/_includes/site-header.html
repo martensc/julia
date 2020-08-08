@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="site-header__container container">
     <a class="site-header__logo" href="/" title="Home">
-      @@include('../includes/svgs/logo.html')
+      @@include('../_includes/svgs/logo.html')
     </a>
     <button class="site-header__menu">
       <span class="visually-hidden">Toggle Menu</span>
@@ -11,7 +11,7 @@
       <a class="site-header__link @@if (context.page === 'platform'){active}" href="/platform">Platform</a>
       <a class="site-header__link @@if (context.page === 'endorsements'){active}" href="/endorsements">Endorsements</a>
       <a class="site-header__link @@if (context.page === 'contact'){active}" href="/contact">Contact</a>
-      <a class="site-header__button button" href="#">Donate</a>
+      <a class="site-header__button button" target="_blank" href="https://secure.anedot.com/julia-martens-for-isd-622/donate">Donate</a>
     </nav>
   </div>
 </header>

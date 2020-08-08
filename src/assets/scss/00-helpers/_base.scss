@@ -27,6 +27,13 @@ body {
   }
 }
 
+::selection {
+  background: lighten($purple-light, 10%); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: lighten($purple-light, 10%); /* Gecko Browsers */
+}
+
 // Base Link styles
 a {
   @include trans();
@@ -123,4 +130,15 @@ img {
 
 strong {
   font-weight: 700;
+}
+
+hr {
+  height: 1px;
+  background-color: $gray-light;
+  border: 0;
+  margin: 1em 0;
+
+  @include breakpoint($bp3) {
+    margin: 2.5em 0;
+  }
 }

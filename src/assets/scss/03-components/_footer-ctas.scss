@@ -2,6 +2,11 @@
 
 .footer-ctas {
   position: relative;
+  background-color: $off-white;
+
+  @include breakpoint($bp2) {
+    background-color: transparent;
+  }
 }
 
 .footer-ctas__container {
@@ -19,15 +24,11 @@
 }
 
 .footer-ctas__item {
-  background-color: $white;
+  background-color: transparent;
   border-bottom: 1px solid $gray-light;
   padding: 2em 0;
 
   @include breakpoint(0 $bp2) {
-    &:first-child {
-      border-top: 1px solid $gray-light;
-    }
-
     &:last-child {
       border-bottom: 0px;
     }
@@ -38,6 +39,7 @@
     flex-direction: column;
     align-items: flex-start;
     flex: 1 1 48%;
+    background-color: $white;
     border: 1px solid $gray-light;
     padding: 2em;
     margin: 1% 0;

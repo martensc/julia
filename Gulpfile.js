@@ -21,7 +21,7 @@ gulp.task('browserSync', () => {
 gulp.task('html', () => (
   gulp.src([
     'src/**/*.html',
-    '!src/includes/**/*' // ignore
+    '!src/_includes/**/*' // ignore
   ])
     .pipe(fileinclude({
       prefix: '@@',
@@ -35,30 +35,30 @@ gulp.task('html', () => (
 
 // Images
 gulp.task('imgs', () => (
-  gulp.src('src/imgs/**/*')
-    .pipe(gulp.dest('./build/imgs'))
+  gulp.src('src/assets/imgs/**/*')
+    .pipe(gulp.dest('./build/assets/imgs'))
 ));
 
 // SVGs
 gulp.task('svgs', () => (
-  gulp.src('src/svgs/**/*')
-    .pipe(gulp.dest('./build/svgs'))
+  gulp.src('src/assets/svgs/**/*')
+    .pipe(gulp.dest('./build/assets/svgs'))
 ));
 
 // Fonts
 gulp.task('fonts', () => (
-  gulp.src('src/fonts/**/*')
-    .pipe(gulp.dest('./build/fonts'))
+  gulp.src('src/assets/fonts/**/*')
+    .pipe(gulp.dest('./build/assets/fonts'))
 ));
 
 // Concat and Compress JS Files
 gulp.task('js', () => (
-  gulp.src('src/js/**/*')
+  gulp.src('src/assets/js/**/*')
     .pipe(concat('site.min.js'))
     .pipe(uglify({
       mangle: false
     }))
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('./build/assets/js'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -66,7 +66,7 @@ gulp.task('js', () => (
 
 // Sass
 gulp.task('sass', () => (
-  gulp.src('src/scss/**/*.scss')
+  gulp.src('src/assets/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(autoprefixer({
@@ -74,7 +74,7 @@ gulp.task('sass', () => (
       cascade: false
     }))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulp.dest('./build/assets/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -95,7 +95,7 @@ gulp.task('deploy', function () {
 
 // Watch
 gulp.task('watch', () => {
-  gulp.watch('src/scss/**/*.scss', ['sass'])
+  gulp.watch('src/assets/scss/**/*.scss', ['sass'])
   .on('change', (event) => {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
@@ -112,7 +112,7 @@ gulp.task('watch', () => {
 // Watch
 gulp.task('sass:watch', ['browserSync', 'sass'], () => (
   gulp
-    .watch('src/scss/**/*.scss', ['sass'])
+    .watch('src/assets/scss/**/*.scss', ['sass'])
 ));
 
 gulp.task('js:watch', ['browserSync', 'js'], () => (

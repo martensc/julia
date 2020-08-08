@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  @@include('../includes/head.html', {
+  @@include('../_includes/head.html', {
     'title': 'About Me'
   })
   <body>
-    @@include('../includes/site-header.html', {
+    @@include('../_includes/site-header.html', {
       'context': {
         'page': 'about'
       }
     })
-    @@include('../includes/hero-simple.html', {
+    @@include('../_includes/hero-simple.html', {
       'context': {
         'image': true
       },
@@ -17,10 +17,9 @@
       'text': '<p>We have to demonstrate and encourage acceptance and multicultural understanding for our youth. I am running for District 622 School Board.</p>'
     })
 
-    @@include('../includes/featured-media.html', {
-      'src': '<img src="../imgs/jm-closeup.jpg" alt="Julia Martens next to building">',
+    @@include('../_includes/featured-media.html', {
+      'src': '<img src="../assets/imgs/jm-closeup.jpg" alt="Julia Martens next to building">',
     })
-
     <!-- Body START -->
     <main class="page-body">
       <div class="container--tight">
@@ -29,8 +28,7 @@
         <p>Throughout her career, she has personally experienced or witnessed what lack of education, money, housing, employment, and resources do to an individual, family, and community. She continues to use her voice to challenge practices in making them more equitable, attainable, and accessible. She has a passion for change, solution-based ideas, and encouraging and empowering youth, parents, educators, and our community to be better together.</p>
       </div>
     </main>
-
     <!-- Body END -->
-    @@include('../includes/site-footer.html')
+    @@include('../_includes/site-footer.html')
   </body>
 </html>
