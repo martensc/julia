@@ -53,7 +53,11 @@ gulp.task('fonts', () => (
 
 // Concat and Compress JS Files
 gulp.task('js', () => (
-  gulp.src('src/assets/js/**/*')
+  gulp.src([
+      'src/assets/js/jquery-3.5.1.min.js',
+      'src/assets/js/fitvids.js',
+      'src/assets/js/site.js'
+    ])
     .pipe(concat('site.min.js'))
     .pipe(uglify({
       mangle: false
@@ -91,7 +95,6 @@ gulp.task('deploy', function () {
   return gulp.src("./build/**/*")
     .pipe(deploy())
 });
-
 
 // Watch
 gulp.task('watch', () => {
