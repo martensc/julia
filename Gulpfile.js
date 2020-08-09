@@ -51,6 +51,12 @@ gulp.task('fonts', () => (
     .pipe(gulp.dest('./build/assets/fonts'))
 ));
 
+// JS HEAD
+gulp.task('jshead', () => (
+  gulp.src('src/assets/js/modernizr-custom.js')
+    .pipe(gulp.dest('./build/assets/js'))
+));
+
 // Concat and Compress JS Files
 gulp.task('js', () => (
   gulp.src([
@@ -128,6 +134,6 @@ gulp.task('html:watch', ['browserSync', 'html'], () => (
     .watch('src/**/*.html', ['html'])
 ));
 
-gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'js', 'js:watch', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
+gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'js', 'js:watch', 'jshead', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
 
-gulp.task('build', ['imgs', 'svgs', 'fonts', 'js', 'misc', 'html', 'sass']);
+gulp.task('build', ['imgs', 'svgs', 'fonts', 'js', 'misc', 'html', 'jshead', 'sass']);
