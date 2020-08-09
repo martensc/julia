@@ -37,7 +37,7 @@ body {
 // Base Link styles
 a {
   @include trans();
-  color: $teal;
+  color: $teal-dark;
   text-decoration: none;
 }
 
