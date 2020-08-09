@@ -12,10 +12,13 @@
     })
     @@include('../_includes/hero-simple.html', {
       'context': {
-        'image': false
+        'image': true
       },
       'title': 'Contact',
       'text': '<p>Julia would love to hear from you.</p>'
+    })
+    @@include('../_includes/featured-media.html', {
+      'src': '<img src="../assets/imgs/jm-closeup.jpg" alt="Julia Martens next to building">',
     })
     <!-- Body START -->
     <main class="page-body">
@@ -41,5 +44,6 @@
     </main>
     <!-- Body END -->
     @@include('../_includes/site-footer.html')
+    @@include('../_includes/foot.html')
   </body>
 </html>
