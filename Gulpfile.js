@@ -92,7 +92,11 @@ gulp.task('sass', () => (
 
 // Move Misc Files
 gulp.task('misc', function() {
-  gulp.src(['src/CNAME'])
+  gulp.src([
+    'src/CNAME',
+    'src/robots.txt',
+    'src/sitemap.xml'
+  ])
     .pipe(gulp.dest('./build'));
 });
 
