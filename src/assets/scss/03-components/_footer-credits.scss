@@ -5,7 +5,7 @@
   background: $purple;
   background: linear-gradient(294deg, $purple-dark 50%, $purple 100%);
   color: $white;
-  padding: 3em 0 0.5em;
+  padding: 3em 0 1em;
 
   @include breakpoint($bp2) {
     background: none;
@@ -46,6 +46,26 @@
   }
 }
 
+.footer-credits__social {
+  list-style: none;
+  padding: 1em 0 2em;
+  margin: 0;
+}
+
+.footer-credits__social-item {
+  display: inline-block;
+  margin: 0 0.25em;
+
+  a {
+    display: block;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-0.25em);
+    }
+  }
+}
+
 .footer-credits__paid-for {
   @include adjust-font-size-to($sm-text, 1);
 }
@@ -54,17 +74,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2em 0;
+  margin: 1em 0 2em;
 
-  @include breakpoint($bp3) {
+  @include breakpoint($bp2) {
     flex-direction: row;
-    margin: 3em 0 4em;
+    margin: 1.5em 0 4em;
   }
 
   .button--invert {
     margin: 0.5em 0;
 
-    @include breakpoint($bp3) {
+    @include breakpoint($bp2) {
       flex: 1 0 200px;
       margin: 0 1em;
     }

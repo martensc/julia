@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html class="no-js" lang="en" dir="ltr">
   @@include('../_includes/head.html', {
-    'title': 'Media'
+    'title': 'Julia reaching out to voters',
+    'description': 'Julia is reaching out to voters through social media; see her videos here.'
   })
   <body>
+    <a class="element-focusable" href="#main">Skip to Main</a>
     @@include('../_includes/site-header.html', {
       'context': {
         'page': 'media'
@@ -17,7 +19,7 @@
       'text': '<p>Julia is reaching out to voters through social media; see her videos here.</p>'
     })
     @@include('../_includes/featured-media.html', {
-      'src': 'VIDEO',
+      'src': '<iframe width="560" height="315" src="https://www.youtube.com/embed/WSe3U0xlcKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     })
     <!-- Body START -->
     <main class="page-body">
@@ -26,5 +28,6 @@
     </main>
     <!-- Body END -->
     @@include('../_includes/site-footer.html')
+    @@include('../_includes/foot.html')
   </body>
 </html>

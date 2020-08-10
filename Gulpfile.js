@@ -51,9 +51,19 @@ gulp.task('fonts', () => (
     .pipe(gulp.dest('./build/assets/fonts'))
 ));
 
+// JS HEAD
+gulp.task('jshead', () => (
+  gulp.src('src/assets/js/modernizr-custom.js')
+    .pipe(gulp.dest('./build/assets/js'))
+));
+
 // Concat and Compress JS Files
 gulp.task('js', () => (
-  gulp.src('src/assets/js/**/*')
+  gulp.src([
+      'src/assets/js/jquery-3.5.1.min.js',
+      'src/assets/js/fitvids.js',
+      'src/assets/js/site.js'
+    ])
     .pipe(concat('site.min.js'))
     .pipe(uglify({
       mangle: false
@@ -82,7 +92,11 @@ gulp.task('sass', () => (
 
 // Move Misc Files
 gulp.task('misc', function() {
-  gulp.src(['src/CNAME'])
+  gulp.src([
+    'src/CNAME',
+    'src/robots.txt',
+    'src/sitemap.xml'
+  ])
     .pipe(gulp.dest('./build'));
 });
 
@@ -91,7 +105,6 @@ gulp.task('deploy', function () {
   return gulp.src("./build/**/*")
     .pipe(deploy())
 });
-
 
 // Watch
 gulp.task('watch', () => {
@@ -125,6 +138,6 @@ gulp.task('html:watch', ['browserSync', 'html'], () => (
     .watch('src/**/*.html', ['html'])
 ));
 
-gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'js', 'js:watch', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
+gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'js', 'js:watch', 'jshead', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
 
-gulp.task('build', ['imgs', 'svgs', 'fonts', 'js', 'misc', 'html', 'sass']);
+gulp.task('build', ['imgs', 'svgs', 'fonts', 'js', 'misc', 'html', 'jshead', 'sass']);
