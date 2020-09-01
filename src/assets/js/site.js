@@ -22,7 +22,7 @@
       }
     });
 
-    $('.featured-media__inner').fitVids();
+    $('.featured-media__inner, .media').fitVids();
 
   });
 
