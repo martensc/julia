@@ -17,18 +17,17 @@
     })
     @@include('../_includes/hero-simple.html', {
       'context': {
-        'image': false
+        'image': true
       },
       'title': 'Media',
       'text': '<p>Julia is reaching out to voters through social media; see her videos here.</p>'
     })
+    @@include('../_includes/featured-media.html', {
+      'src': '<iframe width="560" height="315" src="https://www.youtube.com/embed/WSe3U0xlcKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    })
     <!-- Body START -->
     <main class="page-body">
       <div class="container--tight">
-        <div class="media">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/WSe3U0xlcKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
         <div class="media">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/8I35vzpo-rM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -39,6 +38,10 @@
 
         <div class="media">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/OeFt7x1AwLM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="media">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-XczG7Om1lg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </main>
