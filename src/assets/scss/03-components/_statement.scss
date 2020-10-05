@@ -63,3 +63,40 @@
     margin: 15em 0 10em;
   }
 }
+
+.endorsement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid $gray-light;
+  padding-top: 1em;
+}
+
+.endorsement__title {
+  @extend %track-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  line-height: 1;
+  color: $purple-dark;
+  margin: 1em 0.5rem;
+}
+
+.endorsement__title-top {
+  font-size: 2em;
+}
+
+.endorsement__title-bottom {
+  font-size: 1.2em;
+  color: darken($purple-dark, 10%);
+}
+
+.endorsement__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem;
+}
