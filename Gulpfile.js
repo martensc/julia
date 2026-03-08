@@ -5,7 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const ghpages = require('gh-pages');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const fileinclude = require('gulp-file-include');
 
 // BrowserSync server
@@ -52,11 +52,10 @@ function fonts() {
 // Concat and Compress JS Files
 function js() {
   return gulp.src([
-    'src/assets/js/jquery-3.5.1.min.js',
     'src/assets/js/site.js'
   ])
     .pipe(concat('site.min.js'))
-    .pipe(uglify({ mangle: false }))
+    .pipe(terser())
     .pipe(gulp.dest('./build/assets/js'))
     .pipe(browserSync.stream());
 }
