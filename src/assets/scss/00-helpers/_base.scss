@@ -28,10 +28,7 @@ body {
 }
 
 ::selection {
-  background: lighten($purple-light, 10%); /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: lighten($purple-light, 10%); /* Gecko Browsers */
+  background: lighten($purple-light, 10%);
 }
 
 // Base Link styles
