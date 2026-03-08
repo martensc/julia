@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
@@ -8,18 +8,18 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const fileinclude = require('gulp-file-include');
 
-// browserSync
-gulp.task('browserSync', () => {
+// BrowserSync server
+function serve(done) {
   browserSync.init({
     server: {
       baseDir: 'build'
-    },
-  })
-});
+    }
+  }, done);
+}
 
 // HTML
-gulp.task('html', () => (
-  gulp.src([
+function html() {
+  return gulp.src([
     'src/**/*.html',
     '!src/_includes/**/*' // ignore
   ])
@@ -28,116 +28,101 @@ gulp.task('html', () => (
       basepath: '@file'
     }))
     .pipe(gulp.dest('./build'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-));
+    .pipe(browserSync.stream());
+}
 
 // Images
-gulp.task('imgs', () => (
-  gulp.src('src/assets/imgs/**/*')
-    .pipe(gulp.dest('./build/assets/imgs'))
-));
+function imgs() {
+  return gulp.src('src/assets/imgs/**/*')
+    .pipe(gulp.dest('./build/assets/imgs'));
+}
 
 // SVGs
-gulp.task('svgs', () => (
-  gulp.src('src/assets/svgs/**/*')
-    .pipe(gulp.dest('./build/assets/svgs'))
-));
+function svgs() {
+  return gulp.src('src/assets/svgs/**/*')
+    .pipe(gulp.dest('./build/assets/svgs'));
+}
 
 // Fonts
-gulp.task('fonts', () => (
-  gulp.src('src/assets/fonts/**/*')
-    .pipe(gulp.dest('./build/assets/fonts'))
-));
+function fonts() {
+  return gulp.src('src/assets/fonts/**/*')
+    .pipe(gulp.dest('./build/assets/fonts'));
+}
 
 // JS HEAD
-gulp.task('jshead', () => (
-  gulp.src('src/assets/js/modernizr-custom.js')
-    .pipe(gulp.dest('./build/assets/js'))
-));
+function jshead() {
+  return gulp.src('src/assets/js/modernizr-custom.js')
+    .pipe(gulp.dest('./build/assets/js'));
+}
 
 // Concat and Compress JS Files
-gulp.task('js', () => (
-  gulp.src([
-      'src/assets/js/jquery-3.5.1.min.js',
-      'src/assets/js/fitvids.js',
-      'src/assets/js/site.js'
-    ])
+function js() {
+  return gulp.src([
+    'src/assets/js/jquery-3.5.1.min.js',
+    'src/assets/js/fitvids.js',
+    'src/assets/js/site.js'
+  ])
     .pipe(concat('site.min.js'))
-    .pipe(uglify({
-      mangle: false
-    }))
+    .pipe(uglify({ mangle: false }))
     .pipe(gulp.dest('./build/assets/js'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-));
+    .pipe(browserSync.stream());
+}
 
 // Sass
-gulp.task('sass', () => (
-  gulp.src('src/assets/scss/**/*.scss')
+function styles() {
+  return gulp.src('src/assets/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
+      overrideBrowserslist: ['last 2 versions'],
       cascade: false
     }))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./build/assets/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-));
+    .pipe(browserSync.stream());
+}
 
 // Move Misc Files
-gulp.task('misc', function() {
-  gulp.src([
+function misc() {
+  return gulp.src([
     'src/CNAME',
     'src/robots.txt',
     'src/sitemap.xml'
   ])
     .pipe(gulp.dest('./build'));
-});
+}
 
 // Deploy to GH Pages
-gulp.task('deploy', function () {
-  return gulp.src("./build/**/*")
-    .pipe(deploy())
-});
+function ghDeploy() {
+  return gulp.src('./build/**/*')
+    .pipe(deploy());
+}
 
 // Watch
-gulp.task('watch', () => {
-  gulp.watch('src/assets/scss/**/*.scss', ['sass'])
-  .on('change', (event) => {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-  });
-  gulp.watch('src/*.js', browserSync.reload)
-  .on('change', (event) => {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-  });
-  gulp.watch('src/*.html', browserSync.reload)
-  .on('change', (event) => {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-  });
-});
+function watch() {
+  gulp.watch('src/assets/scss/**/*.scss', styles)
+    .on('change', (path) => console.log(`File ${path} changed, running tasks...`));
+  gulp.watch('src/**/*.js', js)
+    .on('change', (path) => console.log(`File ${path} changed, running tasks...`));
+  gulp.watch('src/**/*.html', html)
+    .on('change', (path) => console.log(`File ${path} changed, running tasks...`));
+}
 
-// Watch
-gulp.task('sass:watch', ['browserSync', 'sass'], () => (
-  gulp
-    .watch('src/assets/scss/**/*.scss', ['sass'])
-));
+// Export named tasks
+exports.html = html;
+exports.imgs = imgs;
+exports.svgs = svgs;
+exports.fonts = fonts;
+exports.jshead = jshead;
+exports.js = js;
+exports.styles = styles;
+exports.misc = misc;
+exports.deploy = ghDeploy;
+exports.watch = watch;
 
-gulp.task('js:watch', ['browserSync', 'js'], () => (
-  gulp
-    .watch('src/**/*.js', ['js'])
-));
+// Build: run all asset tasks in parallel
+const build = gulp.parallel(imgs, svgs, fonts, misc, jshead, js, html, styles);
+exports.build = build;
 
-gulp.task('html:watch', ['browserSync', 'html'], () => (
-  gulp
-    .watch('src/**/*.html', ['html'])
-));
-
-gulp.task('default', ['imgs', 'svgs', 'fonts', 'misc', 'js', 'js:watch', 'jshead', 'html', 'html:watch', 'sass', 'sass:watch', 'watch']);
-
-gulp.task('build', ['imgs', 'svgs', 'fonts', 'js', 'misc', 'html', 'jshead', 'sass']);
+// Default: build, then start server and watch
+exports.default = gulp.series(build, serve, watch);
