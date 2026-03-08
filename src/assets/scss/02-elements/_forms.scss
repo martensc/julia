@@ -65,7 +65,7 @@ select {
   @include adjust-font-size-to($sm-text, 1);
   @include trans;
   background-color: $white;
-  border: 1px solid lighten($gray-medium, 5%);;
+  border: 1px solid lighten($gray-medium, 5%);
   border-radius: 0;
   box-sizing: border-box;
   color: $text-color;
