@@ -4,21 +4,18 @@ Static campaign website for [juliamartens.com](https://juliamartens.com), built 
 
 ## Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| [Gulp 4](https://gulpjs.com) | Task runner |
-| [Sass](https://sass-lang.com) (Dart Sass) | CSS pre-processor |
-| [BrowserSync](https://browsersync.io) | Local dev server with live reload |
-| [gulp-file-include](https://github.com/haoxins/gulp-file-include) | HTML partial includes |
-| [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer) | CSS vendor prefixes |
-| [gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps) | CSS source maps |
-| [gulp-concat](https://github.com/gulp-community/gulp-concat) + [gulp-uglify](https://github.com/terinjokes/gulp-uglify) | JS bundling & minification |
-| [jQuery 3.5.1](https://jquery.com) | DOM & event utilities |
-| [FitVids.js](http://fitvidsjs.com) | Responsive video embeds |
-| [Modernizr](https://modernizr.com) | Feature detection |
-| [gulp-gh-pages](https://github.com/shinnn/gulp-gh-pages) | GitHub Pages deployment |
-| [Node.js 18](https://nodejs.org) (via nvm) | Runtime |
-| [Yarn](https://yarnpkg.com) | Package manager |
+|| Tool | Purpose |
+||---|---|
+|| [Gulp 4](https://gulpjs.com) | Task runner |
+|| [Sass](https://sass-lang.com) (Dart Sass) | CSS pre-processor |
+|| [BrowserSync](https://browsersync.io) | Local dev server with live reload |
+|| [gulp-file-include](https://github.com/haoxins/gulp-file-include) | HTML partial includes |
+|| [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer) | CSS vendor prefixes |
+|| [gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps) | CSS source maps |
+|| [gulp-concat](https://github.com/gulp-community/gulp-concat) + [gulp-terser](https://github.com/terser/terser) | JS bundling & minification |
+|| [gulp-gh-pages](https://github.com/shinnn/gulp-gh-pages) | GitHub Pages deployment |
+|| [Node.js 18](https://nodejs.org) (via nvm) | Runtime |
+|| [Yarn](https://yarnpkg.com) | Package manager |
 
 
 ## Getting Started

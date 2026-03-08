@@ -5,25 +5,26 @@
  * @copyright Copyright 2020 carl-martens.com
  */
 
-// JavaScript should be made compatible with libraries other than jQuery by
-// wrapping it with an "anonymous closure". See:
+document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.querySelector('.site-header__menu');
+  const nav = document.querySelector('.site-header__nav');
 
-(function ($) {
-
-  $(document).ready(function() {
-
-    $('.site-header__menu').on('click', function() {
-      if ($(this).hasClass('js-open')) {
-        $(this).removeClass('js-open');
-        $('.site-header__nav').removeClass('js-open');
+  if (menuButton && nav) {
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.classList.contains('js-open');
+      
+      if (isOpen) {
+        menuButton.classList.remove('js-open');
+        nav.classList.remove('js-open');
+        menuButton.setAttribute('aria-expanded', 'false');
       } else {
-        $(this).addClass('js-open');
-        $('.site-header__nav').addClass('js-open');
+        menuButton.classList.add('js-open');
+        nav.classList.add('js-open');
+        menuButton.setAttribute('aria-expanded', 'true');
       }
     });
 
-    $('.featured-media__inner, .media').fitVids();
-
-  });
-
-})(jQuery);
+    // Initialize aria-expanded state
+    menuButton.setAttribute('aria-expanded', 'false');
+  }
+});

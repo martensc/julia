@@ -3,10 +3,10 @@
     <a class="site-header__logo" href="/" title="Home">
       @@include('../_includes/svgs/logo.html')
     </a>
-    <button class="site-header__menu">
+    <button class="site-header__menu" aria-controls="site-nav">
       <span class="visually-hidden">Toggle Menu</span>
     </button>
-    <nav class="site-header__nav">
+    <nav class="site-header__nav" id="site-nav">
       <a class="site-header__link @@if (context.page === 'about'){active}" href="/about-me">About Me</a>
       <a class="site-header__link @@if (context.page === 'platform'){active}" href="/platform">Platform</a>
       <a class="site-header__link @@if (context.page === 'endorsements'){active}" href="/endorsements">Endorsements</a>

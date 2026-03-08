@@ -38,12 +38,7 @@ $gap: rhythm(1);
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   // gap
-  grid-gap: $gap;
-
-  .no-cssgrid & {
-    @extend %clearfix;
-    display: block;
-  }
+  gap: $gap;
 
   @include breakpoint($bp1) {
     grid-template-columns: 1fr 1fr;
