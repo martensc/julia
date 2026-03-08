@@ -3,7 +3,7 @@ const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
-const deploy = require('gulp-gh-pages');
+const ghpages = require('gh-pages');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const fileinclude = require('gulp-file-include');
@@ -93,9 +93,8 @@ function misc() {
 }
 
 // Deploy to GH Pages
-function ghDeploy() {
-  return gulp.src('./build/**/*')
-    .pipe(deploy());
+function ghDeploy(done) {
+  ghpages.publish('./build', done);
 }
 
 // Watch
