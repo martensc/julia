@@ -15,8 +15,6 @@ Static campaign website for [juliamartens.com](https://juliamartens.com), built 
 | [gulp-gh-pages](https://github.com/shinnn/gulp-gh-pages) | GitHub Pages deployment |
 | [Node.js 18](https://nodejs.org) (via nvm) | Runtime |
 | [Yarn](https://yarnpkg.com) | Package manager |
-|| [Yarn](https://yarnpkg.com) | Package manager |
-
 
 ## Getting Started
 
