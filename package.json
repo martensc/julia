@@ -6,18 +6,25 @@
   "repository": "https://github.com/SomniumDigital/simple-gulp-sass",
   "author": "S Restaino - Somnium Digital Ltd.",
   "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "deploy": "gulp deploy",
+    "watch": "gulp watch"
+  },
   "devDependencies": {
     "breakpoint-sass": "^2.7.1",
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-file-include": "^2.2.2",
+    "gulp-file-include": "^2.3.0",
     "gulp-gh-pages": "^0.5.4",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "normalize.css": "^8.0.0",
+    "sass": "^1.58.3",
     "support-for": "^1.0.7"
   },
   "resolutions": {
