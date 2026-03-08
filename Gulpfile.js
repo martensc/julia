@@ -49,17 +49,10 @@ function fonts() {
     .pipe(gulp.dest('./build/assets/fonts'));
 }
 
-// JS HEAD
-function jshead() {
-  return gulp.src('src/assets/js/modernizr-custom.js')
-    .pipe(gulp.dest('./build/assets/js'));
-}
-
 // Concat and Compress JS Files
 function js() {
   return gulp.src([
     'src/assets/js/jquery-3.5.1.min.js',
-    'src/assets/js/fitvids.js',
     'src/assets/js/site.js'
   ])
     .pipe(concat('site.min.js'))
@@ -112,7 +105,6 @@ exports.html = html;
 exports.imgs = imgs;
 exports.svgs = svgs;
 exports.fonts = fonts;
-exports.jshead = jshead;
 exports.js = js;
 exports.styles = styles;
 exports.misc = misc;
@@ -120,7 +112,7 @@ exports.deploy = ghDeploy;
 exports.watch = watch;
 
 // Build: run all asset tasks in parallel
-const build = gulp.parallel(imgs, svgs, fonts, misc, jshead, js, html, styles);
+const build = gulp.parallel(imgs, svgs, fonts, misc, js, html, styles);
 exports.build = build;
 
 // Default: build, then start server and watch

@@ -40,11 +40,6 @@ $gap: rhythm(1);
   // gap
   grid-gap: $gap;
 
-  .no-cssgrid & {
-    @extend %clearfix;
-    display: block;
-  }
-
   @include breakpoint($bp1) {
     grid-template-columns: 1fr 1fr;
   }

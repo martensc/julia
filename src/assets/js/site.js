@@ -22,8 +22,6 @@
       }
     });
 
-    $('.featured-media__inner, .media').fitVids();
-
   });
 
 })(jQuery);

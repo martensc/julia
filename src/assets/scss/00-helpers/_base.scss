@@ -19,8 +19,8 @@ body {
   line-height: ($base-line-height / $base-font-size) * 1.2em;
   font-family: $base-font-family;
   text-rendering: optimizeLegibility;
-  font-smoothing: always;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   @include breakpoint($bp2) {
     font-size: ($base-font-size / 16px) * 110%;
